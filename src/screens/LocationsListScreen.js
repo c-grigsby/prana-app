@@ -1,14 +1,44 @@
 // @packages
 import React from 'react';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import { Image, Platform, StyleSheet, Text, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { useSelector } from 'react-redux';
+
 // @scripts
 import HeaderButton from '../components/HeaderButton';
+import LocationItem from '../components/LocationItem';
 
 const LocationsListScreen = (props) => {
+  const locations = useSelector((state) => state.locations.locations);
+
+  const onSelectHandler = (itemData) => {
+    props.navigation.navigate('LocationDetail', {
+      locationTitle: itemData.item.title,
+      locationId: itemData.item.id,
+    });
+  };
   return (
     <View>
-      <Text>LocationsListScreen</Text>
+      <Text style={styles.prana}>Prana</Text>
+      <FlatList
+        data={locations}
+        keyExtractor={(item) => item.id}
+        renderItem={(itemData) => (
+          <LocationItem
+            image={null}
+            title={itemData.item.title}
+            address={null}
+            onSelect={() => onSelectHandler(itemData)}
+          />
+        )}
+      />
     </View>
   );
 };
@@ -18,7 +48,7 @@ LocationsListScreen.navigationOptions = (navData) => {
     headerTitle: 'Locations',
     headerLeft: (
       <Image
-        style={{ width: 30, height: 30, resizeMode: 'contain', marginLeft: 10 }}
+        style={{ width: 25, height: 25, resizeMode: 'contain', marginLeft: 10 }}
         source={require('../assets/leaf.png')}
       />
     ),
@@ -36,6 +66,13 @@ LocationsListScreen.navigationOptions = (navData) => {
   };
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  prana: {
+    fontSize: 30,
+    fontFamily: 'Cochin',
+    textAlign: 'center',
+    margin: 15,
+  },
+});
 
 export default LocationsListScreen;

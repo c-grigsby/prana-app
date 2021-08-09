@@ -1,12 +1,12 @@
-//@packages
+// @packages
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-//@scripts
+// @scripts
 import LocationDetailScreen from '../screens/LocationDetailScreen';
 import LocationsListScreen from '../screens/LocationsListScreen';
 import MapScreen from '../screens/MapScreen';
 import NewLocationScreen from '../screens/NewLocationScreen';
-//@styles
+// @styles
 import Colors from '../constants/Colors';
 
 const LocationsNavigator = createStackNavigator(

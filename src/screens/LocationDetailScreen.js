@@ -10,6 +10,12 @@ const LocationDetailScreen = (props) => {
   );
 };
 
+LocationDetailScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: navData.navigation.getParam('locationTitle'),
+  };
+};
+
 const styles = StyleSheet.create({});
 
 export default LocationDetailScreen;
