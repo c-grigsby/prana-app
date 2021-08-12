@@ -48,7 +48,7 @@ LocationsListScreen.navigationOptions = (navData) => {
     headerTitle: 'Locations',
     headerLeft: (
       <Image
-        style={{ width: 25, height: 25, resizeMode: 'contain', marginLeft: 10 }}
+        style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 10 }}
         source={require('../assets/leaf.png')}
       />
     ),
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: 'Cochin',
     textAlign: 'center',
-    margin: 15,
+    marginTop: 15,
   },
 });
 
