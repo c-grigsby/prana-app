@@ -10,11 +10,10 @@ import {
   View,
 } from 'react-native';
 import { useSelector } from 'react-redux';
-
 // @scripts
+import Colors from '../constants/Colors';
 import HeaderButton from '../components/HeaderButton';
 import LocationItem from '../components/LocationItem';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const LocationsListScreen = (props) => {
   const locations = useSelector((state) => state.locations.locations);
@@ -26,17 +25,17 @@ const LocationsListScreen = (props) => {
     });
   };
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <Text style={styles.prana}>Prana</Text>
       <FlatList
         data={locations}
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
           <LocationItem
-            image={itemData.item.imageUri}
-            title={itemData.item.title}
             address={null}
+            image={itemData.item.imageUri}
             onSelect={() => onSelectHandler(itemData)}
+            title={itemData.item.title}
           />
         )}
       />
@@ -49,8 +48,8 @@ LocationsListScreen.navigationOptions = (navData) => {
     headerTitle: 'Locations',
     headerLeft: (
       <Image
-        style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 12 }}
         source={require('../assets/leaf.png')}
+        style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 12 }}
       />
     ),
     headerRight: (
@@ -69,12 +68,12 @@ LocationsListScreen.navigationOptions = (navData) => {
 
 const styles = StyleSheet.create({
   prana: {
-    fontSize: 35,
+    fontSize: 38,
     fontFamily: 'Cochin',
     textAlign: 'center',
     marginTop: 16,
     marginBottom: 10,
-    color: Colors.primary,
+    color: Colors.secondary,
   },
 });
 
