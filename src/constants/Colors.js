@@ -1,3 +1,15 @@
+// dark theme
 export default {
-  primary: '#fc9208'
-}
+  backgroundColor: '#191919',
+  primary: '#fab162',
+  secondary: '#fab162',
+  text: '#ffffff',
+};
+
+// light theme
+// export default {
+//   backgroundColor: '#ffffff',
+//   primary: '#fab162',
+//   secondary: '#fab162',
+//   text: '#191919',
+// };
