@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import {
   Alert,
   Button,
-  Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -49,14 +47,14 @@ const NewLocationScreen = (props) => {
   };
 
   return (
-    <ScrollView>
+    <ScrollView style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <View style={styles.form}>
         <Text style={styles.label}>Title</Text>
         <TextInput style={styles.textInput} onChangeText={titleChangeHandler} />
         <ImageSelector onImageTaken={imageTakenHandler} />
         <Button
           title="Save Location"
-          color={Colors.primary}
+          color={Colors.secondary}
           onPress={saveLocationHandler}
           value={titleValue}
         />
@@ -74,16 +72,18 @@ const styles = StyleSheet.create({
     margin: 30,
   },
   label: {
+    color: Colors.text,
     fontSize: 19,
     marginBottom: 15,
   },
   textInput: {
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
-    marginBottom: 15,
-    paddingVertical: 4,
-    paddingHorizontal: 2,
+    color: Colors.text,
     fontSize: 17,
+    marginBottom: 15,
+    paddingHorizontal: 2,
+    paddingVertical: 4,
   },
 });
 

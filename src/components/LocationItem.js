@@ -1,5 +1,7 @@
+// @packages
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+// @scripts
 import Colors from '../constants/Colors';
 
 const LocationItem = (props) => {
@@ -17,16 +19,16 @@ const LocationItem = (props) => {
 const styles = StyleSheet.create({
   placeItem: {
     borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.25,
     paddingVertical: 15,
     paddingHorizontal: 30,
     flexDirection: 'row',
     alignItems: 'center',
   },
   image: {
-    width: 75,
-    height: 75,
-    borderRadius: 75 / 2,
+    width: 83,
+    height: 83,
+    borderRadius: 83 / 2,
     backgroundColor: '#ccc',
     borderColor: Colors.primary,
     borderWidth: 0.75,
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   title: {
-    color: 'black',
+    color: Colors.text,
     fontSize: 18,
     marginBottom: 5,
   },
