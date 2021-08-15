@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
 // @scripts
 import HeaderButton from '../components/HeaderButton';
 import LocationItem from '../components/LocationItem';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const LocationsListScreen = (props) => {
   const locations = useSelector((state) => state.locations.locations);
@@ -32,7 +33,7 @@ const LocationsListScreen = (props) => {
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
           <LocationItem
-            image={null}
+            image={itemData.item.imageUri}
             title={itemData.item.title}
             address={null}
             onSelect={() => onSelectHandler(itemData)}
@@ -48,7 +49,7 @@ LocationsListScreen.navigationOptions = (navData) => {
     headerTitle: 'Locations',
     headerLeft: (
       <Image
-        style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 10 }}
+        style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 12 }}
         source={require('../assets/leaf.png')}
       />
     ),
@@ -68,10 +69,12 @@ LocationsListScreen.navigationOptions = (navData) => {
 
 const styles = StyleSheet.create({
   prana: {
-    fontSize: 30,
+    fontSize: 35,
     fontFamily: 'Cochin',
     textAlign: 'center',
-    marginTop: 15,
+    marginTop: 16,
+    marginBottom: 10,
+    color: Colors.primary,
   },
 });
 

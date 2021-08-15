@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 75,
+    height: 75,
+    borderRadius: 75 / 2,
     backgroundColor: '#ccc',
     borderColor: Colors.primary,
-    borderWidth: 1,
+    borderWidth: 0.75,
   },
   infoContainer: {
     marginLeft: 25,
