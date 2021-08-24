@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import Colors from '../constants/Colors';
 import ImageSelector from '../components/ImageSelector';
 import * as locationsActions from '../store/actions/locations-actions';
+import LocationSelector from '../components/LocationSelector';
 
 const NewLocationScreen = (props) => {
   const [error, setError] = useState(false);
@@ -52,6 +53,7 @@ const NewLocationScreen = (props) => {
         <Text style={styles.label}>Title</Text>
         <TextInput style={styles.textInput} onChangeText={titleChangeHandler} />
         <ImageSelector onImageTaken={imageTakenHandler} />
+        <LocationSelector />
         <Button
           title="Save Location"
           color={Colors.secondary}

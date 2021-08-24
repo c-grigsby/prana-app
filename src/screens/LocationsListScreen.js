@@ -1,5 +1,5 @@
 // @packages
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import {
   FlatList,
@@ -9,14 +9,22 @@ import {
   Text,
   View,
 } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // @scripts
 import Colors from '../constants/Colors';
 import HeaderButton from '../components/HeaderButton';
 import LocationItem from '../components/LocationItem';
+import * as locationsActions from '../store/actions/locations-actions';
 
 const LocationsListScreen = (props) => {
   const locations = useSelector((state) => state.locations.locations);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(locationsActions.loadLocations());
+  }, [dispatch]);
+
+  console.log('Locations Data: LIST_SCREEN', locations);
 
   const onSelectHandler = (itemData) => {
     props.navigation.navigate('LocationDetail', {
