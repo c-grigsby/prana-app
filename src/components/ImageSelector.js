@@ -109,9 +109,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   imagePreview: {
-    width: 210,
-    height: 210,
-    borderRadius: 210 / 2,
+    width: 200,
+    height: 200,
+    borderRadius: 200 / 2,
     marginTop: 7,
     marginBottom: 7,
     justifyContent: 'center',

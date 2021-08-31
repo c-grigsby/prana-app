@@ -11,8 +11,7 @@ import {
 // @scripts
 import Colors from '../constants/Colors';
 import * as Location from 'expo-location';
-import * as Permissions from 'expo-permissions';
-import { LocationAccuracy } from 'expo-location';
+import MapPreview from './MapPreview';
 
 const LocationSelector = (props) => {
   const [chosenLocation, setChosenLocation] = useState();
@@ -34,7 +33,6 @@ const LocationSelector = (props) => {
   const getLocationHandler = async () => {
     const permission = await verifyPermissions();
     if (!permission) return;
-
     try {
       setIsFetching(true);
       const location = await Location.getCurrentPositionAsync({
@@ -57,13 +55,13 @@ const LocationSelector = (props) => {
 
   return (
     <View style={styles.locationSelector}>
-      <View style={styles.mapPreview}>
+      <MapPreview style={styles.mapPreview} location={chosenLocation}>
         {isFetching ? (
           <ActivityIndicator size="large" color={Colors.primary} />
         ) : (
           <Text style={styles.text}>No location chosen yet</Text>
         )}
-      </View>
+      </MapPreview>
       <Button
         color={Colors.primary}
         onPress={getLocationHandler}
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#ccc',
     borderWidth: 0.75,
-    height: 150,
+    height: 180,
     justifyContent: 'center',
     marginBottom: 10,
     width: '100%',
