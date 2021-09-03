@@ -71,7 +71,7 @@ NewLocationScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   form: {
-    margin: 30,
+    margin: 28,
   },
   label: {
     color: Colors.text,
