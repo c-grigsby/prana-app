@@ -53,7 +53,7 @@ const NewLocationScreen = (props) => {
         <Text style={styles.label}>Title</Text>
         <TextInput style={styles.textInput} onChangeText={titleChangeHandler} />
         <ImageSelector onImageTaken={imageTakenHandler} />
-        <LocationSelector />
+        <LocationSelector navigation={props.navigation} />
         <Button
           title="Save Location"
           color={Colors.secondary}

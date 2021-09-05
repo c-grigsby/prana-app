@@ -53,25 +53,46 @@ const LocationSelector = (props) => {
     setIsFetching(false);
   };
 
+  const pickOnMapHandler = () => {
+    props.navigation.navigate('Map');
+  };
+
   return (
     <View style={styles.locationSelector}>
-      <MapPreview style={styles.mapPreview} location={chosenLocation}>
+      <MapPreview
+        style={styles.mapPreview}
+        location={chosenLocation}
+        onPress={pickOnMapHandler}
+      >
         {isFetching ? (
           <ActivityIndicator size="large" color={Colors.primary} />
         ) : (
           <Text style={styles.text}>No location chosen yet</Text>
         )}
       </MapPreview>
-      <Button
-        color={Colors.primary}
-        onPress={getLocationHandler}
-        title="Get Location"
-      />
+      <View style={styles.actions}>
+        <Button
+          color={Colors.primary}
+          onPress={getLocationHandler}
+          title="Get Location"
+        />
+        <Button
+          color={Colors.primary}
+          onPress={pickOnMapHandler}
+          title="Select on Map"
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  actions: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+  },
   locationSelector: {
     marginBottom: 10,
   },
