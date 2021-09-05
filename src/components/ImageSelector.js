@@ -87,7 +87,6 @@ const ImageSelector = (props) => {
           onPress={takeImage}
           title="Take Image"
         />
-        <View style={styles.space} />
         <Button
           color={Colors.secondary}
           onPress={pickImage}
@@ -102,7 +101,8 @@ const styles = StyleSheet.create({
   buttonStyleContainer: {
     flex: 1,
     flexDirection: 'row',
-    marginHorizontal: 20,
+    justifyContent: 'space-around',
+    width: '100%',
   },
   imagePicker: {
     alignItems: 'center',
@@ -124,10 +124,6 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 225 / 2,
     resizeMode: 'cover',
-  },
-  space: {
-    width: 20,
-    height: 20,
   },
 });
 
