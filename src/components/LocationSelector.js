@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#ccc',
     borderWidth: 0.75,
-    height: 180,
+    height: 165,
     justifyContent: 'center',
     marginBottom: 10,
     width: '100%',
