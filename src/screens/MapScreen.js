@@ -47,8 +47,9 @@ const MapScreen = (props) => {
     <MapView style={styles.map} region={mapRegion} onPress={selectLocation}>
       {markerCoordinates && (
         <Marker
-          title="Selected Location"
+          title="Selected"
           coordinate={markerCoordinates}
+          draggable
         ></Marker>
       )}
     </MapView>

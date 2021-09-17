@@ -1,5 +1,5 @@
 // @packages
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -16,6 +16,14 @@ import MapPreview from './MapPreview';
 const LocationSelector = (props) => {
   const [chosenLocation, setChosenLocation] = useState();
   const [isFetching, setIsFetching] = useState(false);
+
+  const mapChosenLocation = props.navigation.getParam('pickedLocation');
+
+  useEffect(() => {
+    if (mapChosenLocation) {
+      setChosenLocation(mapChosenLocation);
+    }
+  }, [mapChosenLocation]);
 
   const verifyPermissions = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
