@@ -47,7 +47,7 @@ const LocationSelector = (props) => {
     try {
       setIsFetching(true);
       const location = await Location.getCurrentPositionAsync({
-        timeout: 3000,
+        timeout: 2000,
       });
       console.log(location);
       setChosenLocation({
