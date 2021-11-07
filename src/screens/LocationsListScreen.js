@@ -40,7 +40,7 @@ const LocationsListScreen = (props) => {
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
           <LocationItem
-            address={null}
+            address={itemData.item.address}
             image={itemData.item.imageUri}
             onSelect={() => onSelectHandler(itemData)}
             title={itemData.item.title}
