@@ -19,11 +19,14 @@ const LocationSelector = (props) => {
 
   const mapChosenLocation = props.navigation.getParam('pickedLocation');
 
+  const { onLocationChosen } = props;
+
   useEffect(() => {
     if (mapChosenLocation) {
       setChosenLocation(mapChosenLocation);
+      props.onLocationChosen(mapChosenLocation);
     }
-  }, [mapChosenLocation]);
+  }, [mapChosenLocation, onLocationChosen]);
 
   const verifyPermissions = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
@@ -44,10 +47,14 @@ const LocationSelector = (props) => {
     try {
       setIsFetching(true);
       const location = await Location.getCurrentPositionAsync({
-        timeout: 5000,
+        timeout: 3000,
       });
       console.log(location);
       setChosenLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
+      props.onLocationChosen({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
       });
@@ -82,7 +89,7 @@ const LocationSelector = (props) => {
         <Button
           color={Colors.primary}
           onPress={getLocationHandler}
-          title="Get Location"
+          title="Get My Location"
         />
         <Button
           color={Colors.primary}
@@ -108,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#ccc',
     borderWidth: 0.75,
-    height: 160,
+    height: 175,
     justifyContent: 'center',
     marginBottom: 10,
     width: '100%',

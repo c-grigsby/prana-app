@@ -1,5 +1,5 @@
 // @packages
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   Alert,
   Button,
@@ -20,6 +20,7 @@ const NewLocationScreen = (props) => {
   const [error, setError] = useState(false);
   const [titleValue, setTitleValue] = useState('');
   const [selectedImage, setSelectedImage] = useState();
+  const [selectedLocation, setSelectedLocation] = useState();
 
   const dispatch = useDispatch();
 
@@ -34,11 +35,21 @@ const NewLocationScreen = (props) => {
     setSelectedImage(imagePath);
   };
 
+  const locationSelectedHandler = useCallback((location) => {
+    setSelectedLocation(location);
+  }, []);
+
   const saveLocationHandler = () => {
     if (titleValue.length < 1) {
       setError(true);
     } else {
-      dispatch(locationsActions.addLocation(titleValue, selectedImage));
+      dispatch(
+        locationsActions.addLocation(
+          titleValue,
+          selectedImage,
+          selectedLocation
+        )
+      );
       props.navigation.goBack();
     }
   };
@@ -53,7 +64,10 @@ const NewLocationScreen = (props) => {
         <Text style={styles.label}>Title</Text>
         <TextInput style={styles.textInput} onChangeText={titleChangeHandler} />
         <ImageSelector onImageTaken={imageTakenHandler} />
-        <LocationSelector navigation={props.navigation} />
+        <LocationSelector
+          navigation={props.navigation}
+          onLocationChosen={locationSelectedHandler}
+        />
         <Button
           title="Save Location"
           color={Colors.secondary}
