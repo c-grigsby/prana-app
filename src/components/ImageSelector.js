@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
   imagePicker: {
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 10,
   },
   imagePreview: {
     width: 200,
