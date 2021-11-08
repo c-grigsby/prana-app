@@ -69,6 +69,15 @@ const LocationSelector = (props) => {
   };
 
   const pickOnMapHandler = () => {
+    if (chosenLocation) {
+      const selectedLocation = {
+        latitude: chosenLocation.latitude,
+        longitude: chosenLocation.longitude,
+      };
+      props.navigation.navigate('Map', {
+        initialLocation: { selectedLocation },
+      });
+    }
     props.navigation.navigate('Map');
   };
 

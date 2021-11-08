@@ -9,28 +9,42 @@ import Colors from '../constants/Colors';
 
 const LocationDetailScreen = (props) => {
   const locationId = props.navigation.getParam('locationId');
-  const selectedLocation = useSelector((state) =>
+  const chosenLocation = useSelector((state) =>
     state.locations.locations.find((location) => location.id === locationId)
   );
 
+  const selectedLocation = {
+    latitude: chosenLocation.lat,
+    longitude: chosenLocation.lng,
+  };
+
+  const showMapHandler = () => {
+    props.navigation.navigate('Map', {
+      readonly: true,
+      initialLocation: { selectedLocation },
+    });
+  };
+
   return (
-    <ScrollView contentContainerStyle={styles.contentContainer}>
-      <Image source={{ uri: selectedLocation.imageUri }} style={styles.image} />
-      <LinearGradient
-        colors={['#28313b', '#485461']}
-        style={styles.locationContainer}
-      >
-        <View style={styles.addressContainer}>
-          <Text style={styles.address}>{selectedLocation.address}</Text>
-        </View>
-        <MapPreview
-          style={styles.mapPreview}
-          location={{
-            latitude: selectedLocation.lat,
-            longitude: selectedLocation.lng,
-          }}
-        />
-      </LinearGradient>
+    <ScrollView style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
+      <View style={styles.contentContainer}>
+        <Image source={{ uri: chosenLocation.imageUri }} style={styles.image} />
+        <LinearGradient
+          colors={['#28313b', '#485461']}
+          start={[0, 1]}
+          end={[1, 0]}
+          style={styles.locationContainer}
+        >
+          <View style={styles.addressContainer}>
+            <Text style={styles.address}>{chosenLocation.address}</Text>
+          </View>
+          <MapPreview
+            style={styles.mapPreview}
+            location={selectedLocation}
+            onPress={showMapHandler}
+          />
+        </LinearGradient>
+      </View>
     </ScrollView>
   );
 };
@@ -44,7 +58,6 @@ LocationDetailScreen.navigationOptions = (navData) => {
 const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
-    backgroundColor: '#191919',
   },
   image: {
     height: '35%',
