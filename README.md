@@ -1,13 +1,12 @@
-<h1 align="center">
-  <a href="https://reactnative.dev/">
-    React Native
-  </a>
-</h1>
+<div align="center">
 
-<p align="center">
-  <strong>Learn once, write anywhere:</strong><br>
-  Build mobile apps with React.
-</p>
+<img src="https://d117h1jjiq768j.cloudfront.net/images/default-source/blogs/2019/2019-10/the-react-native-sdk-for-kinvey-is-now-available_870_450.png?sfvrsn=296e1008_0" height="175" alt="React Native">
+
+# Prana
+
+Cross-platform mobile application for travel and geolocation documentation
+
+</div>
 
 <p align="center">
   <a href="https://github.com/facebook/react-native/blob/HEAD/LICENSE">
@@ -22,24 +21,27 @@
   <a href="https://reactnative.dev/docs/contributing">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
   </a>
-  <a href="https://twitter.com/intent/follow?screen_name=reactnative">
-    <img src="https://img.shields.io/twitter/follow/reactnative.svg?label=Follow%20@reactnative" alt="Follow @reactnative" />
-  </a>
 </p>
 
-<h3 align="center">
-  <a href="https://reactnative.dev/docs/getting-started">Getting Started</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/docs/tutorial">Learn the Basics</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/showcase.html">Showcase</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/docs/contributing">Contribute</a>
-  <span> · </span>
-  <a href="https://reactnative.dev/help">Community</a>
-  <span> · </span>
-  <a href="https://github.com/facebook/react-native/blob/HEAD/.github/SUPPORT.md">Support</a>
-</h3>
+## Project Details
+
+- Developed with React Native and Expo
+- Google Maps API
+- Allows to user to store a list of defined locations and associated images
+- Interactive map for viewing or selecting locations
+- Persists data via SQLite
+- Automated address retrieval via reverse-geolocation
+- Camera functionality
+
+---
+
+#### This application utilizes an env.js file to host environment variables, for utilization configure object:
+
+- const env_vars = { googleApiKey: 'YourGoogleApiKey'}
+
+---
+
+## React Native Details
 
 React Native brings [**React**'s][r] declarative UI framework to iOS and Android. With React Native, you use native UI controls and have full access to the native platform.
 
@@ -59,10 +61,9 @@ React Native is developed and supported by many companies and individual core co
 - [Requirements](#-requirements)
 - [Building your first React Native app](#-building-your-first-react-native-app)
 - [Documentation](#-documentation)
-- [Upgrading](#-upgrading)
-- [How to Contribute](#-how-to-contribute)
-- [Code of Conduct](#code-of-conduct)
 - [License](#-license)
+
+---
 
 ## 📋 Requirements
 
@@ -92,49 +93,11 @@ The source for the React Native documentation and website is hosted on a separat
 [r-docs]: https://reactjs.org/docs/getting-started.html
 [repo-website]: https://github.com/facebook/react-native-website
 
-## 🚀 Upgrading
-
-Upgrading to new versions of React Native may give you access to more APIs, views, developer tools, and other goodies. See the [Upgrading Guide][u] for instructions.
-
-React Native releases are discussed in the React Native Community, [**@react-native-community/react-native-releases**][repo-releases].
-
-[u]: https://reactnative.dev/docs/upgrading
-[repo-releases]: https://github.com/react-native-community/react-native-releases
-
-## 👏 How to Contribute
-
-The main purpose of this repository is to continue evolving React Native core. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving React Native.
-
-### [Code of Conduct][code]
-
-Facebook has adopted a Code of Conduct that we expect project participants to adhere to.
-Please read the [full text][code] so that you can understand what actions will and will not be tolerated.
-
-[code]: https://code.fb.com/codeofconduct/
-
-### [Contributing Guide][contribute]
-
-Read our [**Contributing Guide**][contribute] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native.
-
-[contribute]: https://reactnative.dev/docs/contributing
-
 ### [Open Source Roadmap][roadmap]
 
 You can learn more about our vision for React Native in the [**Roadmap**][roadmap].
 
 [roadmap]: https://github.com/facebook/react-native/wiki/Roadmap
-
-### Good First Issues
-
-We have a list of [good first issues][gfi] that contain bugs which have a relatively limited scope. This is a great place to get started, gain experience, and get familiar with our contribution process.
-
-[gfi]: https://github.com/facebook/react-native/labels/good%20first%20issue
-
-### Discussions
-
-Larger discussions and proposals are discussed in [**@react-native-community/discussions-and-proposals**][repo-meta].
-
-[repo-meta]: https://github.com/react-native-community/discussions-and-proposals
 
 ## 📄 License
 
