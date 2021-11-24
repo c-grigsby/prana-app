@@ -1,7 +1,8 @@
 // @packages
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import {
+  Button,
   FlatList,
   Image,
   Platform,
@@ -10,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 // @scripts
 import Colors from '../constants/Colors';
 import HeaderButton from '../components/HeaderButton';
@@ -19,12 +21,43 @@ import * as locationsActions from '../store/actions/locations-actions';
 const LocationsListScreen = (props) => {
   const locations = useSelector((state) => state.locations.locations);
   const dispatch = useDispatch();
+  let row = [];
+  let prevOpenedRow;
 
   useEffect(() => {
     dispatch(locationsActions.loadLocations());
   }, [dispatch]);
 
-  console.log('Locations Data: LIST_SCREEN', locations);
+  const closeRow = (id) => {
+    if (prevOpenedRow && prevOpenedRow !== row[id]) {
+      prevOpenedRow.close();
+    }
+    prevOpenedRow = row[id];
+  };
+
+  const onDelete = (id) => {
+    closeRow(id);
+    dispatch(locationsActions.removeLocation(id));
+  };
+
+  const renderRightView = (onDelete, id) => {
+    return (
+      <View
+        style={{
+          margin: 0,
+          alignContent: 'center',
+          justifyContent: 'center',
+          width: 90,
+        }}
+      >
+        <Button
+          color="red"
+          onPress={() => onDelete(id)}
+          title="DELETE"
+        ></Button>
+      </View>
+    );
+  };
 
   const onSelectHandler = (itemData) => {
     props.navigation.navigate('LocationDetail', {
@@ -32,6 +65,7 @@ const LocationsListScreen = (props) => {
       locationId: itemData.item.id,
     });
   };
+
   return (
     <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <Text style={styles.prana}>Prana</Text>
@@ -39,12 +73,21 @@ const LocationsListScreen = (props) => {
         data={locations}
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
-          <LocationItem
-            address={itemData.item.address}
-            image={itemData.item.imageUri}
-            onSelect={() => onSelectHandler(itemData)}
-            title={itemData.item.title}
-          />
+          <Swipeable
+            renderRightActions={(progress, dragX) =>
+              renderRightView(onDelete, itemData.item.id)
+            }
+            onSwipeableOpen={() => closeRow(itemData.item.id)}
+            ref={(ref) => (row[itemData.item.id] = ref)}
+            rightOpenValue={-100}
+          >
+            <LocationItem
+              address={itemData.item.address}
+              image={itemData.item.imageUri}
+              onSelect={() => onSelectHandler(itemData)}
+              title={itemData.item.title}
+            />
+          </Swipeable>
         )}
       />
     </View>

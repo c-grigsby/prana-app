@@ -69,6 +69,7 @@ const NewLocationScreen = (props) => {
           onLocationChosen={locationSelectedHandler}
         />
         <Button
+          style={styles.button}
           title="Save Location"
           color={Colors.secondary}
           onPress={saveLocationHandler}
@@ -84,6 +85,9 @@ NewLocationScreen.navigationOptions = {
 };
 
 const styles = StyleSheet.create({
+  button: {
+    marginTop: 25,
+  },
   form: {
     margin: 23,
   },
