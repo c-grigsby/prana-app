@@ -56,3 +56,21 @@ export const fetchLocations = () => {
   });
   return promise;
 };
+
+export const deleteLocation = (id) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        `DELETE FROM location WHERE id=${id}`,
+        [],
+        () => (_, result) => {
+          resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  });
+  return promise;
+};

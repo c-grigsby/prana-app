@@ -24,10 +24,10 @@ Cross-platform mobile application for travel and geolocation documentation
 
 - Developed with [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
-- Allows the user to create and store a list of defined locations with an associated image, description, and interactive map preview
-- Home screen provides the list of created locations with a clickable details screen
+- Allows the user to create and store a list of defined locations with an associated image and description
+- Home screen provides a list of user created locations with a clickable details screen
 - Interactive map screen for viewing or selecting locations
-- Persists data via [SQLite](https://www.sqlite.org/index.html)
+- Persists data via SQLite
 - Automated address retrieval via reverse-geolocation
 - Utilizes native camera, photo library, and map functionality
 

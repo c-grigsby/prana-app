@@ -3,7 +3,12 @@ import * as FileSystem from 'expo-file-system';
 // @scripts
 export const ADD_LOCATION = 'ADD_LOCATION';
 export const SET_LOCATIONS = 'SET_LOCATIONS';
-import { fetchLocations, insertLocation } from '../../helpers/db';
+export const REMOVE_LOCATION = 'REMOVE_LOCATION';
+import {
+  fetchLocations,
+  insertLocation,
+  deleteLocation,
+} from '../../helpers/db';
 import ENV from '../../env';
 
 export const addLocation = (title, image, location) => {
@@ -18,7 +23,7 @@ export const addLocation = (title, image, location) => {
     if (!resData.results) {
       throw new Error('The address result is missing from the API!');
     }
-    console.log(resData);
+    // console.log(resData);
     const address = resData.results[0].formatted_address;
     console.log('Address:', resData.results[0].formatted_address);
 
@@ -62,8 +67,19 @@ export const loadLocations = () => {
   return async (dispatch) => {
     try {
       const dbResult = await fetchLocations();
-      console.log(dbResult);
+      // console.log(dbResult);
       dispatch({ type: SET_LOCATIONS, locations: dbResult.rows._array });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+
+export const removeLocation = (id) => {
+  return async (dispatch) => {
+    try {
+      dispatch({ type: REMOVE_LOCATION, locationId: id });
+      const dBResult = await deleteLocation(id);
     } catch (err) {
       throw err;
     }
