@@ -12,7 +12,10 @@ export default (state = initialState, action) => {
       const newLocation = new Location(
         action.locationData.id.toString(),
         action.locationData.title,
-        action.locationData.image
+        action.locationData.image,
+        action.locationData.address,
+        action.locationData.coords.lat,
+        action.locationData.coords.lng
       );
       return {
         locations: state.locations.concat(newLocation),
@@ -20,7 +23,14 @@ export default (state = initialState, action) => {
 
     case SET_LOCATIONS:
       const previousLocations = action.locations.map((pl) => {
-        return new Location(pl.id.toString(), pl.title, pl.imageUri);
+        return new Location(
+          pl.id.toString(),
+          pl.title,
+          pl.imageUri,
+          pl.address,
+          pl.lat,
+          pl.lng
+        );
       });
       return {
         locations: previousLocations,
