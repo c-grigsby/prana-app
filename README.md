@@ -27,9 +27,10 @@ Cross-platform mobile application for travel and geolocation documentation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen
 - Interactive map screen for viewing or selecting locations
-- Persists data via SQLite
+- Persists data via [SQLite](https://www.sqlite.org/index.html)
 - Automated address retrieval via reverse-geolocation
 - Utilizes native camera, photo library, and map functionality
+- [Redux](https://redux.js.org/) to manage location state
 
 ---
 
