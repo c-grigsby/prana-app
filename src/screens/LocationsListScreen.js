@@ -1,5 +1,5 @@
 // @packages
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import {
   Button,
