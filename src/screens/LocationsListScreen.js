@@ -69,7 +69,7 @@ const LocationsListScreen = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <Text style={styles.prana}>Prana</Text>
-      <FlatList
+      {locations.length > 0 ? <FlatList
         data={locations}
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
@@ -89,7 +89,7 @@ const LocationsListScreen = (props) => {
             />
           </Swipeable>
         )}
-      />
+      /> :  <Text style={styles.noLocations}>Press the upper right + to begin adding locations</Text>}
     </View>
   );
 };
@@ -126,6 +126,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: Colors.secondary,
   },
+  noLocations: {
+    fontSize: 28, 
+    fontFamily: 'Cochin',
+    textAlign: 'center',
+    marginTop: 16,
+    color: Colors.secondary
+  }
 });
 
 export default LocationsListScreen;
