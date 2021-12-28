@@ -2,7 +2,13 @@
   "expo": {
     "name": "Prana",
     "slug": "prana-app",
+    "privacy": "public",
     "version": "1.0.0",
+    "sdkVersion": "42.0.0",
+    "platforms": [
+      "ios", 
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
