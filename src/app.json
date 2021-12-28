@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Prana",
+    "description": "Cross-platform mobile application for travel & geolocation documentation",
     "slug": "prana-app",
     "privacy": "public",
     "version": "1.0.0",
@@ -10,22 +11,22 @@
       "android"
     ],
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/map.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/prana_splash.png",
+      "resizeMode": "cover"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "icon": "./assets/map.png" 
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive_map.png",
         "backgroundColor": "#FFFFFF"
       }
     },
