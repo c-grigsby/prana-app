@@ -17,7 +17,9 @@ import * as locationsActions from '../store/actions/locations-actions';
 import LocationSelector from '../components/LocationSelector';
 
 const NewLocationScreen = (props) => {
-  const [error, setError] = useState(false);
+  const [titleError, setTitleError] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [locationError, setLocationError] = useState(false);
   const [titleValue, setTitleValue] = useState('');
   const [selectedImage, setSelectedImage] = useState();
   const [selectedLocation, setSelectedLocation] = useState();
@@ -25,11 +27,23 @@ const NewLocationScreen = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (error) {
-      setError(false);
+    if (titleError) {
+      setTitleError(false);
       Alert.alert('Please enter a title');
+      return;
     }
-  }, [error]);
+    if (imageError) {
+      setImageError(false);
+      Alert.alert('Please provide an image for the location');
+      return;
+    }
+    if (locationError) {
+      setLocationError(false);
+      Alert.alert('No location chosen yet');
+      return;
+    }
+
+  }, [titleError, imageError, locationError]);
 
   const imageTakenHandler = (imagePath) => {
     setSelectedImage(imagePath);
@@ -41,8 +55,15 @@ const NewLocationScreen = (props) => {
 
   const saveLocationHandler = () => {
     if (titleValue.length < 1) {
-      setError(true);
-    } else {
+      setTitleError(true);
+    } 
+    else if (!selectedImage) {
+      setImageError(true);
+    }
+    else if (!selectedLocation) {
+      setLocationError(true);
+    }
+    else {
       dispatch(
         locationsActions.addLocation(
           titleValue,
