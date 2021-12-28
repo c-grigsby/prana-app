@@ -6,6 +6,14 @@
     "privacy": "public",
     "version": "1.0.0",
     "sdkVersion": "42.0.0",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Prana to access your photos to add to locations."
+        }
+      ]
+    ],
     "platforms": [
       "ios", 
       "android"
@@ -21,13 +29,28 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.grigsby9.prana",
+      "buildNumber": "1.0.0",
       "supportsTablet": true,
       "icon": "./assets/map.png" 
     },
     "android": {
+      "package": "com.grigsby9.prana",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive_map.png",
         "backgroundColor": "#FFFFFF"
+      }, 
+      "permissions": [
+        "ACCESS_FINE_LOCATIONS", 
+        "CAMERA", 
+        "WRITE_EXTERNAL_STORAGE", 
+        "READ_EXTERNAL_STORAGE"
+      ], 
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDOh2GUKtW4sdNzss-vSmovtIPfU80xEAg"
+        }
       }
     },
     "web": {

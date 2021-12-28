@@ -31,12 +31,15 @@ Cross-platform mobile application for travel and geolocation documentation
 - Automated address retrieval via reverse-geolocation
 - Utilizes native camera, photo library, and map functionality
 - [Redux](https://redux.js.org/) to manage location state
+- Icons made by [Freepik]("https://www.freepik.com") from www.flaticon.com
+- This application utilizes an [env.js](https://www.npmjs.com/package/dotenv) file to host environment variables, for utilization configure object:
+  - const env_vars = { googleApiKey: 'YourGoogleApiKey'}
 
 ---
 
-#### This application utilizes an env.js file to host environment variables, for utilization configure object:
+## Expo Publishing URL
 
-- const env_vars = { googleApiKey: 'YourGoogleApiKey'}
+- https://expo.dev/@grigsby9/prana-app
 
 ---
 
