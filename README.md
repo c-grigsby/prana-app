@@ -42,7 +42,7 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ## Getting Started
 
-- To install dependencies:
+- To install dependencies, navigate to the 'src' directory and execute in the terminal:
 
   ```bash
   npm install
