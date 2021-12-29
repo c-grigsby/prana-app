@@ -37,9 +37,17 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ---
 
+## Beta Testing
+
+- iOS: awaiting review for external testing with TestFlight
+- Android: awaiting review for Google Play Store
+
+---
+
 ## Expo Publishing URL
 
 - https://expo.dev/@grigsby9/prana-app
+- With the Expo app installed, the application can be previewed with Android devices at the URL
 
 ---
 
