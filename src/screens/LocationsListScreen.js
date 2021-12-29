@@ -68,7 +68,7 @@ const LocationsListScreen = (props) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
-      <Text style={styles.prana}>Prana</Text>
+      <Text style={styles.prana}>Prana.io</Text>
       {locations.length > 0 ? <FlatList
         data={locations}
         keyExtractor={(item) => item.id}
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 28, 
     fontFamily: 'Cochin',
     textAlign: 'center',
-    marginTop: 16,
+    marginTop: 36,
     color: Colors.secondary
   }
 });
