@@ -1,4 +1,5 @@
-"expo": {
+{
+  "expo": {
   "name": "Prana",
   "description": "Cross-platform mobile application for travel & geolocation documentation",
   "slug": "prana-app",
@@ -55,5 +56,5 @@
   "web": {
     "favicon": "./assets/favicon.png"
   }
-}
+ }
 }
