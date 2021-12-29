@@ -2,7 +2,7 @@
 
 <img src="https://d117h1jjiq768j.cloudfront.net/images/default-source/blogs/2019/2019-10/the-react-native-sdk-for-kinvey-is-now-available_870_450.png?sfvrsn=296e1008_0" height="175" alt="React Native">
 
-# Prana
+# Prana.io
 
 Cross-platform mobile application for travel and geolocation documentation
 
@@ -31,12 +31,23 @@ Cross-platform mobile application for travel and geolocation documentation
 - Automated address retrieval via reverse-geolocation
 - Utilizes native camera, photo library, and map functionality
 - [Redux](https://redux.js.org/) to manage location state
+- Icons made by [Freepik]("https://www.freepik.com") from www.flaticon.com
+- This application utilizes an [env.js](https://www.npmjs.com/package/dotenv) file to host environment variables, for utilization configure object:
+  - const env_vars = { googleApiKey: 'YourGoogleApiKey'}
 
 ---
 
-#### This application utilizes an env.js file to host environment variables, for utilization configure object:
+## Beta Testing
 
-- const env_vars = { googleApiKey: 'YourGoogleApiKey'}
+- iOS: awaiting review for external testing with TestFlight
+- Android: awaiting review for Google Play Store
+
+---
+
+## Expo Publishing URL
+
+- https://expo.dev/@grigsby9/prana-app
+- With the Expo app installed, the application can be previewed with Android devices at the URL
 
 ---
 
