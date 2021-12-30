@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 28, 
     fontFamily: 'Cochin',
     textAlign: 'center',
-    marginTop: 36,
+    marginTop: 100,
     color: Colors.secondary
   }
 });
