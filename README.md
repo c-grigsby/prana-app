@@ -20,6 +20,24 @@ Cross-platform mobile application for travel and geolocation documentation
   </a>
 </p>
 
+---
+
+## App Downloads
+
+This app is currently in Beta. To download to your mobile device for testing:
+
+- ### iOS
+
+  - Download TestFlight from the App Store
+  - Public link for TestFlight: [https://testflight.apple.com/join/JDZDY79Y](https://testflight.apple.com/join/JDZDY79Y)
+
+- ### Android
+  - _Awaiting review approval from Google Play_
+  - Download Expo Go from the Google Play Store
+  - Scan the code at: [https://expo.dev/@grigsby9/prana-app](https://expo.dev/@grigsby9/prana-app)
+
+---
+
 ## Project Details
 
 - Developed with [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/)
@@ -37,21 +55,20 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ---
 
-## Beta Testing
-
-- iOS: awaiting review for external testing with TestFlight
-- Android: awaiting review for Google Play Store
-
----
-
 ## Expo Publishing URL
 
 - https://expo.dev/@grigsby9/prana-app
-- With the Expo app installed, the application can be previewed with Android devices at the URL
+- With the Expo Go app installed, this application can be previewed with Android devices at the URL above
 
 ---
 
 ## Getting Started
+
+- To install the Expo CLI
+
+  ```bash
+  npm install --global expo-cli
+  ```
 
 - To install dependencies, navigate to the 'src' directory and execute in the terminal:
 
