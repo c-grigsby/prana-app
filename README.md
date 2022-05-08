@@ -29,10 +29,10 @@ This app is currently in Beta. To download to your mobile device for testing:
 - ### iOS
 
   - Download TestFlight from the App Store
-  - Public link for TestFlight: [https://testflight.apple.com/join/JDZDY79Y](https://testflight.apple.com/join/JDZDY79Y)
+  - Public link for TestFlight: _Awaiting new TestFlight approval_
 
 - ### Android
-  - _Awaiting review approval from Google Play_
+  - _Awaiting review approval from Google Play, in the meantime..._
   - Download Expo Go from the Google Play Store
   - Scan the code at: [https://expo.dev/@grigsby9/prana-app](https://expo.dev/@grigsby9/prana-app)
 
@@ -40,7 +40,7 @@ This app is currently in Beta. To download to your mobile device for testing:
 
 ## Project Details
 
-- Developed with [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/)
+- Developed with [React Native](https://reactnative.dev/) (0.64.3) and the [Expo](https://expo.dev/) SDK (43.0.0)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen

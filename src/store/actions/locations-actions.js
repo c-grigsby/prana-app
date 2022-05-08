@@ -9,12 +9,12 @@ import {
   insertLocation,
   deleteLocation,
 } from '../../helpers/db';
-import ENV from '../../env';
+import {GOOGLE_API_KEY} from "@env";
 
 export const addLocation = (title, image, location) => {
   return async (dispatch) => {
     const response = await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}&key=${ENV.googleApiKey}`
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}&key=${GOOGLE_API_KEY}`
     );
     if (!response.ok)
       throw new Error('Something went wrong getting the address from the API!');
@@ -23,7 +23,7 @@ export const addLocation = (title, image, location) => {
     if (!resData.results) {
       throw new Error('The address result is missing from the API!');
     }
-    // console.log(resData);
+    // console.log("Response Data: ", resData);
     const address = resData.results[0].formatted_address;
     console.log('Address:', resData.results[0].formatted_address);
 
