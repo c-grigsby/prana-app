@@ -89,7 +89,7 @@ const LocationsListScreen = (props) => {
             />
           </Swipeable>
         )}
-      /> :  <Text style={styles.noLocations}>Press the upper right + to begin adding locations</Text>}
+      /> :  <Text style={styles.noLocations}>Press the upper right + to begin</Text>}
     </View>
   );
 };
@@ -122,15 +122,15 @@ const styles = StyleSheet.create({
     fontSize: 38,
     fontFamily: 'Cochin',
     textAlign: 'center',
-    marginTop: 16,
+    marginTop: 20,
     marginBottom: 10,
     color: Colors.secondary,
   },
   noLocations: {
-    fontSize: 28, 
+    fontSize: 26, 
     fontFamily: 'Cochin',
     textAlign: 'center',
-    marginTop: 100,
+    marginTop: 210,
     color: Colors.secondary
   }
 });
