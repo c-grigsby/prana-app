@@ -50,8 +50,8 @@ This app is currently in Beta. To download to your mobile device for testing:
 - Utilizes native camera, photo library, and map functionality
 - [Redux](https://redux.js.org/) to manage location state
 - Icons made by [Freepik]("https://www.freepik.com") from www.flaticon.com
-- This application utilizes an [env.js](https://www.npmjs.com/package/dotenv) file to host environment variables, for utilization configure object:
-  - const env_vars = { googleApiKey: 'YourGoogleApiKey'}
+- This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
+  - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
 
 ---
 
