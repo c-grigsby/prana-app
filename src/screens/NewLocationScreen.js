@@ -15,6 +15,7 @@ import Colors from '../constants/Colors';
 import ImageSelector from '../components/ImageSelector';
 import * as locationsActions from '../store/actions/locations-actions';
 import LocationSelector from '../components/LocationSelector';
+import OutlinedButton from '../components/UI/OutlinedButton';
 
 const NewLocationScreen = (props) => {
   const [titleError, setTitleError] = useState(false);
@@ -89,13 +90,11 @@ const NewLocationScreen = (props) => {
           navigation={props.navigation}
           onLocationChosen={locationSelectedHandler}
         />
-        <Button
-          style={styles.button}
-          title="Save Location"
-          color={Colors.secondary}
+        <OutlinedButton
+          icon="save-outline"
           onPress={saveLocationHandler}
           value={titleValue}
-        />
+        >Save Location</OutlinedButton>
       </View>
     </ScrollView>
   );

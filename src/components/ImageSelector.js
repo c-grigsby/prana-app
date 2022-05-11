@@ -13,6 +13,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 // @scripts
 import Colors from '../constants/Colors';
+import OutlinedButton from './UI/OutlinedButton';
 
 const ImageSelector = (props) => {
   const [image, setImage] = useState(null);
@@ -82,16 +83,14 @@ const ImageSelector = (props) => {
         )}
       </View>
       <View style={styles.buttonStyleContainer}>
-        <Button
-          color={Colors.secondary}
+        <OutlinedButton
+          icon="camera"
           onPress={takeImage}
-          title="Take Image"
-        />
-        <Button
-          color={Colors.secondary}
+        >Take Photo</OutlinedButton>
+        <OutlinedButton
+          icon="images-outline"
           onPress={pickImage}
-          title="Select Image"
-        />
+        >Select Image</OutlinedButton>
       </View>
     </View>
   );
