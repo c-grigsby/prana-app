@@ -12,6 +12,7 @@ import {
 import Colors from '../constants/Colors';
 import * as Location from 'expo-location';
 import MapPreview from './MapPreview';
+import OutlinedButton from './UI/OutlinedButton';
 
 const LocationSelector = (props) => {
   const [chosenLocation, setChosenLocation] = useState();
@@ -95,16 +96,14 @@ const LocationSelector = (props) => {
         )}
       </MapPreview>
       <View style={styles.actions}>
-        <Button
-          color={Colors.primary}
+        <OutlinedButton
+          icon="location-outline"
           onPress={getLocationHandler}
-          title="Locate User"
-        />
-        <Button
-          color={Colors.primary}
+        >Locate User</OutlinedButton>
+        <OutlinedButton
+          icon="map-outline"
           onPress={pickOnMapHandler}
-          title="Use Map"
-        />
+        >Use Map</OutlinedButton>
       </View>
     </View>
   );
