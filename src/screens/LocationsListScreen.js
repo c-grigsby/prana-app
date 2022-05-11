@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // @scripts
 import Colors from '../constants/Colors';
-import HeaderButton from '../components/HeaderButton';
+import HeaderButton from '../components/UI/HeaderButton';
 import LocationItem from '../components/LocationItem';
 import * as locationsActions from '../store/actions/locations-actions';
 

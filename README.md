@@ -49,7 +49,8 @@ This app is currently in Beta. To download to your mobile device for testing:
 - Automated address retrieval via reverse-geolocation
 - Utilizes native camera, photo library, and map functionality
 - [Redux](https://redux.js.org/) to manage location state
-- Icons made by [Freepik]("https://www.freepik.com") from www.flaticon.com
+- Button icons by [ionicons](https://ionic.io/ionicons) via [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
+- Icons made by [Freepik](https://www.freepik.com) from www.flaticon.com
 - This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
   - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
 
