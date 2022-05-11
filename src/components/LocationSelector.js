@@ -98,12 +98,12 @@ const LocationSelector = (props) => {
         <Button
           color={Colors.primary}
           onPress={getLocationHandler}
-          title="Get My Location"
+          title="Locate User"
         />
         <Button
           color={Colors.primary}
           onPress={pickOnMapHandler}
-          title="Select on Map"
+          title="Use Map"
         />
       </View>
     </View>
