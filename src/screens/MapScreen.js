@@ -1,7 +1,9 @@
 // @packages
 import MapView, { Marker } from 'react-native-maps';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 
 const MapScreen = (props) => {
   const initialLocation = props.navigation.getParam('initialLocation');
@@ -71,20 +73,24 @@ MapScreen.navigationOptions = (navData) => {
 
   return {
     headerRight: (
-      <TouchableOpacity style={styles.headerButton} onPress={saveFn}>
-        <Text style={styles.headerButtonText}>Save</Text>
-      </TouchableOpacity>
+         <TouchableOpacity style={styles.headerButton} onPress={saveFn}>
+           <Text style={styles.headerButtonText}>Save</Text>
+           <Ionicons name="save-outline" size={22} color={Colors.backgroundColor} style={styles.icon}/>
+         </TouchableOpacity>
     ),
   };
 };
 
 const styles = StyleSheet.create({
   headerButton: {
+    flexDirection: 'row',
     marginHorizontal: 20,
+    alignItems: 'center',
   },
   headerButtonText: {
-    fontSize: 16,
-    color: 'white',
+    fontSize: 18,
+    marginRight: 3,
+    color: Colors.backgroundColor,
   },
   map: {
     flex: 1,
