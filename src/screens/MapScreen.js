@@ -75,7 +75,7 @@ MapScreen.navigationOptions = (navData) => {
     headerRight: (
          <TouchableOpacity style={styles.headerButton} onPress={saveFn}>
            <Text style={styles.headerButtonText}>Save</Text>
-           <Ionicons name="save-outline" size={18} color={Colors.backgroundColor} style={styles.icon}/>
+           <Ionicons name="save-outline" size={22} color={Colors.backgroundColor} style={styles.icon}/>
          </TouchableOpacity>
     ),
   };
