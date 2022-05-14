@@ -69,7 +69,8 @@ const LocationsListScreen = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <Text style={styles.prana}>Prana.io</Text>
-      {locations.length > 0 ? <FlatList
+      {locations.length > 0 ?
+      <FlatList
         data={locations}
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => (
@@ -89,7 +90,10 @@ const LocationsListScreen = (props) => {
             />
           </Swipeable>
         )}
-      /> :  <Text style={styles.noLocations}>Press the upper right + to begin</Text>}
+      /> :  <View style={styles.noLocationsContainer}>
+              <Text style={styles.noLocationsText}>Press the upper right + to begin</Text>
+           </View>
+          }
     </View>
   );
 };
@@ -111,6 +115,7 @@ LocationsListScreen.navigationOptions = (navData) => {
           onPress={() => {
             navData.navigation.navigate('NewLocation');
           }}
+          tintColor='black'
         />
       </HeaderButtons>
     ),
@@ -126,11 +131,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: Colors.secondary,
   },
-  noLocations: {
+  noLocationsContainer: {
+    flex: .75,
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  noLocationsText: {
     fontSize: 26, 
     fontFamily: 'Cochin',
-    textAlign: 'center',
-    marginTop: 210,
     color: Colors.secondary
   }
 });

@@ -21,7 +21,7 @@ const LocationsNavigator = createStackNavigator(
       headerStyle: {
         backgroundColor: Colors.primary,
       },
-      headerTintColor: 'white',
+      headerTintColor: Colors.backgroundColor,
     },
   }
 );
