@@ -3,16 +3,15 @@ import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
-  Button,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 // @scripts
 import Colors from '../constants/Colors';
-import * as Location from 'expo-location';
 import MapPreview from './MapPreview';
 import OutlinedButton from './UI/OutlinedButton';
+import GetUserLocation from '../helpers/GetUserLocation';
 
 const LocationSelector = (props) => {
   const [chosenLocation, setChosenLocation] = useState();
@@ -29,35 +28,19 @@ const LocationSelector = (props) => {
     }
   }, [mapChosenLocation, onLocationChosen]);
 
-  const verifyPermissions = async () => {
-    let { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert(
-        'Insufficient permissions',
-        'Sorry, you need to grant location permissions to use this app',
-        [{ text: 'Okay' }]
-      );
-      return false;
-    }
-    return true;
-  };
-
   const getLocationHandler = async () => {
-    const permission = await verifyPermissions();
-    if (!permission) return;
+   
     try {
       setIsFetching(true);
-      const location = await Location.getCurrentPositionAsync({
-        timeout: 0,
-      });
+      const location = await GetUserLocation();
       console.log(location);
       setChosenLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
+        latitude: location.latitude,
+        longitude: location.longitude,
       });
       props.onLocationChosen({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
+        latitude: location.latitude,
+        longitude: location.longitude,
       });
     } catch (err) {
       Alert.alert(
