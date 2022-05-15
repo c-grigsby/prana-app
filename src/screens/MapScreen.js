@@ -1,9 +1,11 @@
 // @packages
 import MapView, { Marker } from 'react-native-maps';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native';
+// @scripts
 import Colors from '../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
+import GetUserLocation from '../helpers/GetUserLocation';
 
 const MapScreen = (props) => {
   const initialLocation = props.navigation.getParam('initialLocation');
@@ -12,17 +14,38 @@ const MapScreen = (props) => {
   const [selectedLocation, setSelectedLocation] = useState(
     initialLocation ? initialLocation.selectedLocation : ''
   );
-
-  const mapRegion = {
-    latitude: selectedLocation ? selectedLocation.latitude : 35.8486,
-    longitude: selectedLocation ? selectedLocation.longitude : -86.3649,
-    latitudeDelta: selectedLocation ? 0.0922 : 32.0,
-    longitudeDelta: selectedLocation ? 0.0421 : 32.0,
-  };
+  const [mapRegion, setMapRegion] = useState();
 
   let markerCoordinates;
 
+  useEffect(async () => {
+      if (!selectedLocation) {
+        let immediateLocation = await GetUserLocation();
+        setMapRegion({
+          latitude: immediateLocation ? immediateLocation.latitude : 35.846, 
+          longitude: immediateLocation ? immediateLocation.longitude : -86.3649, 
+          latitudeDelta: immediateLocation ? 0.0922 : 38.0, 
+          longitudeDelta: immediateLocation? 0.0421 : 38.0, 
+          });
+          markerCoordinates = {
+            latitude: immediateLocation.latitude,
+            longitude: immediateLocation.longitude,
+          };
+      } else {
+        setMapRegion({
+          latitude: selectedLocation.latitude, 
+          longitude: selectedLocation.longitude, 
+          latitudeDelta: 0.0922, 
+          longitudeDelta: 0.0421, 
+          });
+      }
+      return () => {
+        immediateLocation = false;
+      }
+    }, [selectedLocation]);
+
   if (selectedLocation) {
+
     markerCoordinates = {
       latitude: selectedLocation.latitude,
       longitude: selectedLocation.longitude,

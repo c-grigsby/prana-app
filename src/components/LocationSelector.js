@@ -8,9 +8,9 @@ import {
   Text,
   View,
 } from 'react-native';
+import * as Location from 'expo-location';
 // @scripts
 import Colors from '../constants/Colors';
-import * as Location from 'expo-location';
 import MapPreview from './MapPreview';
 import OutlinedButton from './UI/OutlinedButton';
 
