@@ -45,7 +45,6 @@ const MapScreen = (props) => {
     }, [selectedLocation]);
 
   if (selectedLocation) {
-
     markerCoordinates = {
       latitude: selectedLocation.latitude,
       longitude: selectedLocation.longitude,
