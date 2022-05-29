@@ -22,19 +22,18 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ---
 
-## App Downloads
+## Downloading the App
 
-This app is currently in Beta. To download to your mobile device for testing:
+This app is currently in beta for testing. To download to your mobile device for review:
 
 - ### iOS
 
-  - Download TestFlight from the App Store
-  - Public link for TestFlight: _Awaiting new TestFlight approval_
+  - A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/): to join the Prana.io beta
+  - Step 1, download [TestFlight](https://testflight.apple.com/) from the App Store to your mobile device
+  - Step 2, visit the public link on your iOS device to download: _'waiting for review' of latest release_
 
 - ### Android
-  - _Awaiting review approval from Google Play, in the meantime..._
-  - Download Expo Go from the Google Play Store
-  - Scan the code at: [https://expo.dev/@grigsby9/prana-app](https://expo.dev/@grigsby9/prana-app)
+  - _Awaiting review approval from Google Play_
 
 ---
 
@@ -52,14 +51,7 @@ This app is currently in Beta. To download to your mobile device for testing:
 - Button icons by [ionicons](https://ionic.io/ionicons) via [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
 - Icons made by [Freepik](https://www.freepik.com) from www.flaticon.com
 - This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
-  - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
-
----
-
-## Expo Publishing URL
-
-- https://expo.dev/@grigsby9/prana-app
-- With the Expo Go app installed, this application can be previewed with Android devices at the URL above
+  - GOOGLE_API_KEY={YOUR_GOOGLE_MAPS_API_KEY_HERE}
 
 ---
 
