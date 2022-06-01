@@ -4,7 +4,7 @@ import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 // @scripts
 import {GOOGLE_API_KEY} from "@env";
 
-const MapPreview = (props) => {
+const MapPreview = (props) => { 
   let imagePreviewUrl;
   if (props.location) {
     imagePreviewUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${props.location.latitude},${props.location.longitude}&zoom=14&size=400x400&maptype=roadmap&markers=color:red%7Clabel:A%7C${props.location.latitude},${props.location.longitude}&key=${GOOGLE_API_KEY}`;
