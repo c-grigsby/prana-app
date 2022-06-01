@@ -24,16 +24,22 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ## Downloading the App
 
-This app is currently in beta for testing. To download to your mobile device for review:
+This app is currently in beta for testing. To download version 0.1.1 to your mobile device for review:
 
 - ### iOS
 
   - A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/): to join the Prana.io beta
   - Step 1, download [TestFlight](https://testflight.apple.com/) from the App Store to your mobile device
-  - Step 2, visit the public link on your iOS device to download: _'waiting for review' of latest release_
+  - Step 2, visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
 
 - ### Android
-  - _Awaiting review approval from Google Play_
+  - _Awaiting review from Google Play_
+
+---
+
+## Beta App Information
+
+Cross-platform mobile application for travel & geolocation documentation. Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Requires permissions for native camera, photo library, and geolocation features.
 
 ---
 
@@ -51,7 +57,7 @@ This app is currently in beta for testing. To download to your mobile device for
 - Button icons by [ionicons](https://ionic.io/ionicons) via [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
 - Icons made by [Freepik](https://www.freepik.com) from www.flaticon.com
 - This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
-  - GOOGLE_API_KEY={YOUR_GOOGLE_MAPS_API_KEY_HERE}
+  - GOOGLE_API_KEY={Your_Google_Maps_API_Key_Here}
 
 ---
 
