@@ -9,9 +9,6 @@ Cross-platform mobile application for travel and geolocation documentation
 </div>
 
 <p align="center">
-  <a href="https://github.com/facebook/react-native/blob/HEAD/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native is released under the MIT license." />
-  </a>
   <a href="https://www.npmjs.org/package/react-native">
     <img src="https://img.shields.io/npm/v/react-native?color=brightgreen&label=npm%20package" alt="Current npm package version." />
   </a>
@@ -28,6 +25,7 @@ This app is currently in beta for testing. To download version 0.1.1 to your mob
 
 - ### iOS
 
+  - _Info below is expired a new beta from Apple Testflight should be active within 48 hours_
   - A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/): to join the Prana.io beta
   - Step 1, download [TestFlight](https://testflight.apple.com/) from the App Store to your mobile device
   - Step 2, visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
@@ -37,7 +35,19 @@ This app is currently in beta for testing. To download version 0.1.1 to your mob
 
 ---
 
+|                   Splash Screen                   |                      Add Location                      |
+| :-----------------------------------------------: | :----------------------------------------------------: |
+| <img src="./src/public/splash.jpeg" width="230"/> | <img src="./src/public/newLocation.jpeg" width="230"/> |
+
+|                     Saved Locations                     |                      Location Detail                      |
+| :-----------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="./src/public/locationList.jpeg" width="230"/> | <img src="./src/public/locationDetail.jpeg" width="230"/> |
+
+---
+
 ## Beta App Information
+
+---
 
 Cross-platform mobile application for travel & geolocation documentation. Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Requires permissions for native camera, photo library, and geolocation features.
 
@@ -45,7 +55,7 @@ Cross-platform mobile application for travel & geolocation documentation. Create
 
 ## Project Details
 
-- Developed with [React Native](https://reactnative.dev/) (0.64.3) and the [Expo](https://expo.dev/) SDK (43.0.0)
+- Developed with [React Native](https://reactnative.dev/) (0.64.3) and the [Expo](https://expo.dev/) SDK (45.0.0)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen
