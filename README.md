@@ -25,7 +25,7 @@ This app is currently in beta testing for version 0.1.2
 
 - ### iOS
 
-  - A free download of the app is available via [Apple Testflight](https://developer.apple.com/testflight/)
+  - A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/)
   - Visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
 
 - ### Android
@@ -44,8 +44,6 @@ This app is currently in beta testing for version 0.1.2
 ---
 
 ## About Version 0.1.2
-
----
 
 Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Swipe saved location to the left to delete location.
 
