@@ -69,31 +69,35 @@ const LocationsListScreen = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.backgroundColor }}>
       <Text style={styles.prana}>Prana.io</Text>
-      {locations.length > 0 ?
-      <FlatList
-        data={locations}
-        keyExtractor={(item) => item.id}
-        renderItem={(itemData) => (
-          <Swipeable
-            renderRightActions={(progress, dragX) =>
-              renderRightView(onDelete, itemData.item.id)
-            }
-            onSwipeableOpen={() => closeRow(itemData.item.id)}
-            ref={(ref) => (row[itemData.item.id] = ref)}
-            rightOpenValue={-100}
-          >
-            <LocationItem
-              address={itemData.item.address}
-              image={itemData.item.imageUri}
-              onSelect={() => onSelectHandler(itemData)}
-              title={itemData.item.title}
-            />
-          </Swipeable>
-        )}
-      /> :  <View style={styles.noLocationsContainer}>
-              <Text style={styles.noLocationsText}>Press the upper right + to begin</Text>
-           </View>
-          }
+      {locations.length > 0 ? (
+        <FlatList
+          data={locations}
+          keyExtractor={(item) => item.id}
+          renderItem={(itemData) => (
+            <Swipeable
+              renderRightActions={(progress, dragX) =>
+                renderRightView(onDelete, itemData.item.id)
+              }
+              onSwipeableOpen={() => closeRow(itemData.item.id)}
+              ref={(ref) => (row[itemData.item.id] = ref)}
+              rightOpenValue={-100}
+            >
+              <LocationItem
+                address={itemData.item.address}
+                image={itemData.item.imageUri}
+                onSelect={() => onSelectHandler(itemData)}
+                title={itemData.item.title}
+              />
+            </Swipeable>
+          )}
+        />
+      ) : (
+        <View style={styles.noLocationsContainer}>
+          <Text style={styles.noLocationsText}>
+            Press the upper right + to begin
+          </Text>
+        </View>
+      )}
     </View>
   );
 };
@@ -101,13 +105,13 @@ const LocationsListScreen = (props) => {
 LocationsListScreen.navigationOptions = (navData) => {
   return {
     headerTitle: 'Locations',
-    headerLeft: (
+    headerLeft: () => (
       <Image
         source={require('../assets/leaf.png')}
         style={{ width: 26, height: 26, resizeMode: 'contain', marginLeft: 12 }}
       />
     ),
-    headerRight: (
+    headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Add Location"
@@ -115,7 +119,7 @@ LocationsListScreen.navigationOptions = (navData) => {
           onPress={() => {
             navData.navigation.navigate('NewLocation');
           }}
-          tintColor='black'
+          tintColor="black"
         />
       </HeaderButtons>
     ),
@@ -132,15 +136,15 @@ const styles = StyleSheet.create({
     color: Colors.secondary,
   },
   noLocationsContainer: {
-    flex: .75,
-    justifyContent: 'center', 
+    flex: 0.75,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   noLocationsText: {
-    fontSize: 26, 
+    fontSize: 26,
     fontFamily: 'Cochin',
-    color: Colors.secondary
-  }
+    color: Colors.secondary,
+  },
 });
 
 export default LocationsListScreen;

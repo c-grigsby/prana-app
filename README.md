@@ -21,17 +21,16 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ## Downloading the App
 
-This app is currently in beta for testing. To download version 0.1.1 to your mobile device for review:
+This app is currently in beta testing for version 0.1.2
 
-- ### iOS
+### iOS
 
-  - _Info below is expired a new beta from Apple Testflight should be active within 48 hours_
-  - A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/): to join the Prana.io beta
-  - Step 1, download [TestFlight](https://testflight.apple.com/) from the App Store to your mobile device
-  - Step 2, visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
+- A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/)
+- Visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
 
-- ### Android
-  - _Awaiting review from Google Play_
+### Android
+
+- Awaiting review from Google Play
 
 ---
 
@@ -45,17 +44,17 @@ This app is currently in beta for testing. To download version 0.1.1 to your mob
 
 ---
 
-## Beta App Information
+## About Version 0.1.2
 
----
+Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Swipe saved location to the left to delete location.
 
-Cross-platform mobile application for travel & geolocation documentation. Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Requires permissions for native camera, photo library, and geolocation features.
+Requires permissions for native camera, photo library, and geolocation features.
 
 ---
 
 ## Project Details
 
-- Developed with [React Native](https://reactnative.dev/) (0.64.3) and the [Expo](https://expo.dev/) SDK (45.0.0)
+- Developed with [React Native](https://reactnative.dev/) (0.68.2) and the [Expo](https://expo.dev/) SDK (45.0.0)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen
