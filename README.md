@@ -9,9 +9,6 @@ Cross-platform mobile application for travel and geolocation documentation
 </div>
 
 <p align="center">
-  <a href="https://github.com/facebook/react-native/blob/HEAD/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="React Native is released under the MIT license." />
-  </a>
   <a href="https://www.npmjs.org/package/react-native">
     <img src="https://img.shields.io/npm/v/react-native?color=brightgreen&label=npm%20package" alt="Current npm package version." />
   </a>
@@ -22,25 +19,42 @@ Cross-platform mobile application for travel and geolocation documentation
 
 ---
 
-## App Downloads
+## Downloading the App
 
-This app is currently in Beta. To download to your mobile device for testing:
+This app is currently in beta testing for version 0.1.2
 
-- ### iOS
+### iOS
 
-  - Download TestFlight from the App Store
-  - Public link for TestFlight: _Awaiting new TestFlight approval_
+- A free download of the app is available via [Apple TestFlight](https://developer.apple.com/testflight/)
+- Visit the public link on your iOS device to download: https://testflight.apple.com/join/JDZDY79Y
 
-- ### Android
-  - _Awaiting review approval from Google Play, in the meantime..._
-  - Download Expo Go from the Google Play Store
-  - Scan the code at: [https://expo.dev/@grigsby9/prana-app](https://expo.dev/@grigsby9/prana-app)
+### Android
+
+- Awaiting review from Google Play
+
+---
+
+|                   Splash Screen                   |                      Add Location                      |
+| :-----------------------------------------------: | :----------------------------------------------------: |
+| <img src="./src/public/splash.jpeg" width="230"/> | <img src="./src/public/newLocation.jpeg" width="230"/> |
+
+|                     Saved Locations                     |                      Location Detail                      |
+| :-----------------------------------------------------: | :-------------------------------------------------------: |
+| <img src="./src/public/locationList.jpeg" width="230"/> | <img src="./src/public/locationDetail.jpeg" width="230"/> |
+
+---
+
+## About Version 0.1.2
+
+Create and store a list of defined locations to the device with an associated image and description. Click the saved location to reveal the location details screen. Interactive map screen for viewing or selecting location. Swipe saved location to the left to delete location.
+
+Requires permissions for native camera, photo library, and geolocation features.
 
 ---
 
 ## Project Details
 
-- Developed with [React Native](https://reactnative.dev/) (0.64.3) and the [Expo](https://expo.dev/) SDK (43.0.0)
+- Developed with [React Native](https://reactnative.dev/) (0.68.2) and the [Expo](https://expo.dev/) SDK (45.0.0)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen
@@ -52,14 +66,7 @@ This app is currently in Beta. To download to your mobile device for testing:
 - Button icons by [ionicons](https://ionic.io/ionicons) via [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
 - Icons made by [Freepik](https://www.freepik.com) from www.flaticon.com
 - This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
-  - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
-
----
-
-## Expo Publishing URL
-
-- https://expo.dev/@grigsby9/prana-app
-- With the Expo Go app installed, this application can be previewed with Android devices at the URL above
+  - GOOGLE_API_KEY={Your_Google_Maps_API_Key_Here}
 
 ---
 

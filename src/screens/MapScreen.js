@@ -17,20 +17,23 @@ const MapScreen = (props) => {
   const [mapRegion, setMapRegion] = useState();
 
   let markerCoordinates;
-
-  useEffect(async () => {
+  let immediateLocation;
+  useEffect(() => {
       if (!selectedLocation) {
-        let immediateLocation = await GetUserLocation();
-        setMapRegion({
-          latitude: immediateLocation ? immediateLocation.latitude : 35.846, 
-          longitude: immediateLocation ? immediateLocation.longitude : -86.3649, 
-          latitudeDelta: immediateLocation ? 0.0922 : 38.0, 
-          longitudeDelta: immediateLocation? 0.0421 : 38.0, 
-          });
-          markerCoordinates = {
-            latitude: immediateLocation.latitude,
-            longitude: immediateLocation.longitude,
-          };
+        async function fetchData() {
+          immediateLocation = await GetUserLocation();
+          setMapRegion({
+            latitude: immediateLocation ? immediateLocation.latitude : 35.846, 
+            longitude: immediateLocation ? immediateLocation.longitude : -86.3649, 
+            latitudeDelta: immediateLocation ? 0.0922 : 38.0, 
+            longitudeDelta: immediateLocation? 0.0421 : 38.0, 
+            });
+            markerCoordinates = {
+              latitude: immediateLocation.latitude,
+              longitude: immediateLocation.longitude,
+            };
+        }
+        fetchData();
       } else {
         setMapRegion({
           latitude: selectedLocation.latitude, 
