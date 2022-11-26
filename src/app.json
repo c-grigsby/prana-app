@@ -4,7 +4,7 @@
     "description": "Cross-platform mobile application for travel & geolocation documentation",
     "slug": "prana-app",
     "privacy": "public",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "plugins": [
       [
         "expo-image-picker",
@@ -31,7 +31,7 @@
     ],
     "ios": {
       "bundleIdentifier": "com.grigsby9.prana",
-      "buildNumber": "0.1.2",
+      "buildNumber": "0.1.23",
       "supportsTablet": true,
       "icon": "./assets/map.png"
     },
@@ -46,7 +46,8 @@
         "ACCESS_FINE_LOCATIONS",
         "CAMERA",
         "WRITE_EXTERNAL_STORAGE",
-        "READ_EXTERNAL_STORAGE"
+        "READ_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ],
       "config": {
         "googleMaps": {
@@ -56,6 +57,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8aed685d-74b7-49d1-9ed3-6fb4180ef9bd"
+      }
+    }  
   }
 }
