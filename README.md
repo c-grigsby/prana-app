@@ -54,7 +54,7 @@ Requires permissions for native camera, photo library, and geolocation features.
 
 ## Project Details
 
-- Developed with [React Native](https://reactnative.dev/) (0.68.2) and the [Expo](https://expo.dev/) SDK (45.0.0)
+- Developed with [React Native](https://reactnative.dev/) (0.70.5) and the [Expo](https://expo.dev/) SDK (47.0.0)
 - [Google Maps Platform](https://developers.google.com/maps) for geolocation
 - Allows the user to create and store a list of defined locations with an associated image and description
 - Home screen provides a list of user created locations with a clickable details screen
