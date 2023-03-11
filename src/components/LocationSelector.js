@@ -1,12 +1,6 @@
 // @packages
 import React, { useEffect, useState } from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { ActivityIndicator, Alert, StyleSheet, Text, View } from 'react-native';
 // @scripts
 import Colors from '../constants/Colors';
 import MapPreview from './MapPreview';
@@ -29,7 +23,6 @@ const LocationSelector = (props) => {
   }, [mapChosenLocation, onLocationChosen]);
 
   const getLocationHandler = async () => {
-   
     try {
       setIsFetching(true);
       const location = await GetUserLocation();
@@ -79,14 +72,12 @@ const LocationSelector = (props) => {
         )}
       </MapPreview>
       <View style={styles.actions}>
-        <OutlinedButton
-          icon="location-outline"
-          onPress={getLocationHandler}
-        >Locate User</OutlinedButton>
-        <OutlinedButton
-          icon="map-outline"
-          onPress={pickOnMapHandler}
-        >Use Map</OutlinedButton>
+        <OutlinedButton icon="location-outline" onPress={getLocationHandler}>
+          My Location
+        </OutlinedButton>
+        <OutlinedButton icon="map-outline" onPress={pickOnMapHandler}>
+          Use Map
+        </OutlinedButton>
       </View>
     </View>
   );
