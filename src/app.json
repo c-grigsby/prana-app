@@ -31,7 +31,7 @@
     ],
     "ios": {
       "bundleIdentifier": "com.grigsby9.prana",
-      "buildNumber": "0.1.25",
+      "buildNumber": "0.1.26",
       "supportsTablet": true,
       "icon": "./assets/map.png"
     },
