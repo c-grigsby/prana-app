@@ -65,12 +65,12 @@ Requires permissions for native camera, photo library, and geolocation features.
 - [Redux](https://redux.js.org/) to manage location state
 - Button icons by [ionicons](https://ionic.io/ionicons) via [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons)
 - Icons made by [Freepik](https://www.freepik.com) from www.flaticon.com
-- This application utilizes a [.env](https://www.npmjs.com/package/react-native-dotenv) file to host environment variables, for utilization include:
-  - GOOGLE_API_KEY={Your_Google_Maps_API_Key_Here}
 
 ---
 
 ## Getting Started
+
+- Create a [.env](https://www.npmjs.com/package/react-native-dotenv) file in the 'src' directory and include the contents of the [.env.example](src/.env.example)
 
 - To install the Expo CLI
 
