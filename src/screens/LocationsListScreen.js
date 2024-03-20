@@ -115,7 +115,7 @@ LocationsListScreen.navigationOptions = (navData) => {
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Add Location"
-          iconName={Platform.OS === 'android' ? 'md-add' : 'ios-add'}
+          iconName="add"
           onPress={() => {
             navData.navigation.navigate('NewLocation');
           }}
