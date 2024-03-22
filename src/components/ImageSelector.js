@@ -49,8 +49,8 @@ const ImageSelector = (props) => {
       quality: 1,
     });
     if (!image.cancelled) {
-      setImage(image.uri);
-      props.onImageTaken(image.uri);
+      setImage(image.assets[0].uri);
+      props.onImageTaken(image.assets[0].uri);
     }
   };
 
@@ -62,8 +62,8 @@ const ImageSelector = (props) => {
       aspect: [4, 4],
       quality: 1,
     });
-    setImage(image.uri);
-    props.onImageTaken(image.uri);
+    setImage(image.assets[0].uri);
+    props.onImageTaken(image.assets[0].uri);
   };
 
   return (
