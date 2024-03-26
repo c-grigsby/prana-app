@@ -1,16 +1,8 @@
 // @packages
-import {
-  Alert,
-  Button,
-  Image,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Alert, Image, Platform, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
+import * as MediaLibrary from 'expo-media-library';
 // @scripts
 import Colors from '../constants/Colors';
 import OutlinedButton from './UI/OutlinedButton';
@@ -31,14 +23,15 @@ const ImageSelector = (props) => {
   }, []);
 
   const verifyPermissions = async () => {
-    const result = await Permissions.askAsync(
-      Permissions.CAMERA,
-      Permissions.MEDIA_LIBRARY
-    );
-    if (result.status !== 'granted') {
+    const { status: cameraStatus } =
+      await ImagePicker.requestCameraPermissionsAsync();
+    const { status: mediaLibraryStatus } =
+      await MediaLibrary.requestPermissionsAsync();
+
+    if (cameraStatus !== 'granted' || mediaLibraryStatus !== 'granted') {
       Alert.alert(
         'Insufficient permissions',
-        'Sorry, you need to grant the reqiuired permissions to use this app',
+        'Sorry, you need to grant the required permissions to use this app',
         [{ text: 'Okay' }]
       );
       return false;
@@ -50,14 +43,14 @@ const ImageSelector = (props) => {
     const permission = await verifyPermissions();
     if (!permission) return;
     let image = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images, //explore, else change to .Images
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 4],
       quality: 1,
     });
     if (!image.cancelled) {
-      setImage(image.uri);
-      props.onImageTaken(image.uri);
+      setImage(image.assets[0].uri);
+      props.onImageTaken(image.assets[0].uri);
     }
   };
 
@@ -69,8 +62,8 @@ const ImageSelector = (props) => {
       aspect: [4, 4],
       quality: 1,
     });
-    setImage(image.uri);
-    props.onImageTaken(image.uri);
+    setImage(image.assets[0].uri);
+    props.onImageTaken(image.assets[0].uri);
   };
 
   return (
@@ -83,14 +76,12 @@ const ImageSelector = (props) => {
         )}
       </View>
       <View style={styles.buttonStyleContainer}>
-        <OutlinedButton
-          icon="camera"
-          onPress={takeImage}
-        >Take Photo</OutlinedButton>
-        <OutlinedButton
-          icon="images-outline"
-          onPress={pickImage}
-        >Select Image</OutlinedButton>
+        <OutlinedButton icon="camera" onPress={takeImage}>
+          Take Photo
+        </OutlinedButton>
+        <OutlinedButton icon="images-outline" onPress={pickImage}>
+          Select Image
+        </OutlinedButton>
       </View>
     </View>
   );
